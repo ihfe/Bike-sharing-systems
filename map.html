@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+
+    <style>html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }</style>
+    <!--我觉得这段应该没用：
+
+    <style>#map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }</style>
+
+     -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+
+    <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style>
+        #map_1aa1e294001d070934c3ee8311f56260 {
+            position: fixed;
+            z-index: 1;
+            width: 100.0%;
+            height: 70.0%;
+            left: 0.0%;
+            top: 20.0%;
+
+        }
+
+        .leaflet-container {
+            font-size: 1rem;
+        }
+
+                /* 添加一个文字区域 */
+        #text-container {
+            position: absolute;
+            top: 10px; /* 根据需要调整位置 */
+            left: 560px; /* 根据需要调整位置 */
+            z-index: 2; /* 确保文字在地图上方 */
+            background-color: black; /* 设置背景色，便于文字可见 */
+            padding: 10px;
+            border: 2px solid black;
+            color:white;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="folium-map" id="map_1aa1e294001d070934c3ee8311f56260"></div>
+
+<div id="text-container">
+    <h1>Welcome to My Map</h1>
+    <p>This is a description text about the map or the markers on it.</p>
+</div>
+
+<script>
+
+    var map_1aa1e294001d070934c3ee8311f56260 = L.map(
+        "map_1aa1e294001d070934c3ee8311f56260",
+        {
+            center: [39.9, 116.4],
+            crs: L.CRS.EPSG3857,
+            zoom: 13,
+            zoomControl: true,
+            preferCanvas: false,
+        }
+    );
+
+
+    var tile_layer_4df52a5ff6140c2479b3b56ad888bb02 = L.tileLayer(
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+            "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+            "detectRetina": false,
+            "maxNativeZoom": 19,
+            "maxZoom": 19,
+            "minZoom": 0,
+            "noWrap": false,
+            "opacity": 1,
+            "subdomains": "abc",
+            "tms": false
+        }
+    );
+
+    tile_layer_4df52a5ff6140c2479b3b56ad888bb02.addTo(map_1aa1e294001d070934c3ee8311f56260);
+
+    var marker = L.marker([39.9, 116.4]).addTo(map_1aa1e294001d070934c3ee8311f56260);
+
+    // 每隔 5 秒更新 marker 的位置
+    setInterval(function () {
+        // 假设新的位置会从某个数据源获取
+        // 在这里我们使用随机值来模拟新位置的获取
+        var newLat = 39.9 + (Math.random() - 0.5) * 0.1;
+        var newLng = 116.4 + (Math.random() - 0.5) * 0.1;
+
+        // 更新 marker 位置
+        marker.setLatLng([newLat, newLng]);
+
+        // 可以设置 marker 的弹出窗口或其他信息来显示位置变化
+        marker.bindPopup("New position: " + newLat.toFixed(5) + ", " + newLng.toFixed(5)).openPopup();
+    }, 5000);  // 每隔 5000 毫秒（5 秒）更新一次
+
+</script>
+</body>
+</html>
