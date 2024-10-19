@@ -3,7 +3,38 @@
 {% block title %}Home{% endblock %}
 
 {% block main %}
-    <div style="text-align: center;font-size: 48px;">
-        <p>Welcome~</p>
+    <div class="container-xxl text-bg-dark p-5 rounded">
+        <p>这是主页！！！一共三个板块</p>
+        <p>占位</p>
+        <p>占位</p>
+        <p>占位</p>
+        <div style="text-align: center">
+            <button onclick="scrollToSection()" type="button" class="btn btn-light">Welcome~</button>
+        </div>
+
+
+    
     </div>
+    <div class="container-xxl text-bg-light p-5 rounded">
+        <h1>白色背景:Our Vehicles</h1>
+        <li>点击Welcome可以跳转第一条：Our Vehicles(①E-scooter②E-bikes);</li>
+        <li>E-scooter和E-bikes下面会分别放置Rent和Return按钮，最后会有一行灰色文字：Something wrong happened? give us a report</li>
+        <p>占位</p>
+        <p>占位</p>
+        <p>占位</p>
+    </div>
+    <div class="container-xxl text-bg-dark p-5 rounded" id="How_to_pay">
+        <h1>黑色背景:How to Pay</h1>
+        <li>一些文字</li>
+        <li>或者一些图片</li>
+        <p>占位</p>
+        <p>占位</p>
+        <p>占位</p>
+    </div>
+    <script>
+    // 定义函数，用于滚动到 "黑色背景: How to Pay" 部分
+    function scrollToSection() {
+        document.getElementById('How_to_pay').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
 {% endblock %}
