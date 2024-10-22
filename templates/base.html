@@ -7,6 +7,8 @@
     <script src="{% static 'bootstrap5/popper.min.js' %}"></script>
     <script src="{% static 'bootstrap5/bootstrap.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+
     {% block head %}{% endblock %}
 </head>
 <body>
@@ -25,8 +27,8 @@
                 <li><a href="/" class="nav-link px-2 text-light"> About</a></li>
             </ul>
             <div class="text-end">
-                <a href="{% url 'team_project:login' %}" type="button" class="btn btn-outline-success me-2">登录</a>
-                <a href="{% url 'team_project:register' %}" type="button" class="btn btn-success">注册</a>
+                <a href="{% url 'team_project:login' %}" type="button" class="btn btn-outline-light me-2">登录</a>
+                <a href="{% url 'team_project:register' %}" type="button" class="btn btn-light">注册</a>
             </div>
 
         </div>

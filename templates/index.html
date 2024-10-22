@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/hover_img.css' %}">{% endblock %}
 
 {% block main %}
-    <div class="container-xxl text-bg-dark p-5 rounded">
+    <div class="container-fluid text-bg-dark p-4">
         <p>这是主页！！！一共三个板块</p>
         <p>占位</p>
         <p>占位</p>
@@ -12,29 +14,82 @@
             <button onclick="scrollToSection()" type="button" class="btn btn-light">Welcome~</button>
         </div>
 
-
-    
     </div>
-    <div class="container-xxl text-bg-light p-5 rounded">
-        <h1>白色背景:Our Vehicles</h1>
-        <li>点击Welcome可以跳转第一条：Our Vehicles(①E-scooter②E-bikes);</li>
-        <li>E-scooter和E-bikes下面会分别放置Rent和Return按钮，最后会有一行灰色文字：Something wrong happened? give us a report</li>
-        <p>占位</p>
-        <p>占位</p>
-        <p>占位</p>
+    <div class="container-fluid text-bg-light p-2">
+        <h1 class="mt-5 mb-5 text-center">Our Vehicles</h1>
+        <div class="row gap-4 d-flex justify-content-center align-items-center">
+            <div class="col-4">
+                <div class="card shadow-sm h-250 hover-image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content align-items">
+                            <svg class="icon" viewBox="0 0 1240 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                 width="500" height="200">
+                                <path d="M1123.631084 722.570448l-162.578351-597.927046-43.612288 9.806313-22.451296-92.643853H809.571A67.095827 67.095827 0 0 0 747.378329 0h-85.67621a67.611949 67.611949 0 0 0 0 134.965837h85.67621a67.353888 67.353888 0 0 0 62.192671-41.547801H853.441348l12.644983 51.612175-43.096166 9.806313 110.966176 412.897399-226.319386 235.609578H382.996375a235.609578 235.609578 0 0 0-228.125813-169.029872 218.3195 218.3195 0 0 0-114.320967 29.935061l25.806087 43.870349a166.965386 166.965386 0 0 1 87.482637-22.451296 185.029647 185.029647 0 0 1 173.674968 117.417697h-35.612401a149.159185 149.159185 0 0 0-137.030324-85.67621 153.288159 153.288159 0 1 0 134.965837 222.964595h505.799314A64.257158 64.257158 0 0 0 858.860627 877.406972v-37.934948L975.762203 722.570448l9.548252 35.096278a150.44949 150.44949 0 0 0-51.612175 113.030663 153.030098 153.030098 0 0 0 306.060197 0 151.481733 151.481733 0 0 0-116.127393-148.126941zM747.378329 83.353662h-85.67621a15.741713 15.741713 0 0 1-14.70947-15.741713 15.999774 15.999774 0 0 1 14.70947-15.999774h85.67621a15.999774 15.999774 0 0 1 0 31.741487z m258.060874 549.411601l-13.677226-51.612174 6.967644-7.225705 28.128635-11.8708 14.193348 51.612175zM924.150028 185.803829l88.772941 326.963128-36.128523 15.225591-90.063245-333.67271zM154.870562 972.115313a101.675984 101.675984 0 0 1 0-203.093908 100.127619 100.127619 0 0 1 77.418262 34.064035H192.289389a63.999097 63.999097 0 0 0-63.224914 63.224914V877.406972a63.999097 63.999097 0 0 0 63.224914 63.224914h35.096279a99.869558 99.869558 0 0 1-72.515106 31.483427zM807.248452 877.406972a13.161105 13.161105 0 0 1-11.612739 11.612739H192.289389a13.161105 13.161105 0 0 1-11.612739-11.612739v-10.838557a12.903044 12.903044 0 0 1 11.612739-11.612739h614.959063z m14.967531-74.063471h-42.838105l170.320177-177.545881 10.580495 39.483314z m196.126264-123.095037l1.548365 3.096731 34.580157-17.290079 49.547688 181.932916a14.70947 14.70947 0 0 1-5.161217 14.70947l-19.096505 4.903157a11.8708 11.8708 0 0 1-9.03213 0 8.257948 8.257948 0 0 1-4.387035-6.709583l-48.257384-179.094247z m69.160314 292.12491a101.675984 101.675984 0 0 1-101.417923-101.417924 95.998645 95.998645 0 0 1 15.741713-51.612175l14.451409 53.418601a60.386245 60.386245 0 0 0 60.386245 47.483201 84.127845 84.127845 0 0 0 15.741713-1.806426l15.999774-4.128974a64.257158 64.257158 0 0 0 45.676775-77.418262l-13.677226-50.06381A99.095376 99.095376 0 0 1 1188.920485 870.697389a101.675984 101.675984 0 0 1-101.417924 101.417924z"
+                                      fill="#454545"></path>
+                            </svg>
+                        </div>
+                        <p class="card-text mt-4">This is a wider card with supporting text below as a natural lead-in
+                            to
+                            additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Rent</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Return</button>
+                            </div>
+                            <small class="text-muted">E-scooter</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card shadow-sm h-250 hover-image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content align-items">
+                            <svg class="icon" viewBox="0 0 1240 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                 width="500" height="200">
+                                <path d="M837.76 964.48a148.48 148.48 0 0 1-144.64-150.4v-12.16A1356.16 1356.16 0 0 1 512 810.88a1657.6 1657.6 0 0 1-192-6.4v12.16a148.48 148.48 0 0 1-145.28 151.04A148.48 148.48 0 0 1 32 816.64a177.28 177.28 0 0 1 24.32-78.08A56.32 56.32 0 0 1 32 689.92C32 635.52 74.24 448 152.96 448H454.4a30.08 30.08 0 0 1 24.32 12.16 26.24 26.24 0 0 1 0 30.08c-48 96.64-36.48 114.56-36.48 114.56A349.44 349.44 0 0 0 665.6 576a51.2 51.2 0 0 0 24.32-60.16 540.8 540.8 0 0 0-17.92-54.4 649.6 649.6 0 0 1-42.24-192A28.16 28.16 0 0 1 656 239.36h64a39.68 39.68 0 0 1 30.72 24.32 301.44 301.44 0 0 0 53.76 108.16 306.56 306.56 0 0 1 64 181.12c78.72 42.24 120.96 90.88 120.96 138.88a75.52 75.52 0 0 1-24.32 48.64 118.4 118.4 0 0 1 24.32 78.08 157.44 157.44 0 0 1-151.68 145.92z m-84.48-168.96v18.56a84.48 84.48 0 1 0 168.96 0 68.48 68.48 0 0 0-17.92-48.64 928 928 0 0 1-151.04 30.08zM95.36 768a74.24 74.24 0 0 0-17.92 54.4 87.68 87.68 0 0 0 84.48 90.88 87.68 87.68 0 0 0 84.48-90.88v-17.92a264.96 264.96 0 0 1-64-12.16A346.24 346.24 0 0 0 95.36 768z m12.16-64a1502.08 1502.08 0 0 0 392.32 42.24c256 0 404.48-36.48 422.4-60.16 0-18.56-17.92-48.64-102.4-90.88a30.72 30.72 0 0 1-17.92-24.32 256 256 0 0 0-60.8-168.96 436.48 436.48 0 0 1-54.4-102.4h-5.76a869.76 869.76 0 0 0 36.48 138.88 376.96 376.96 0 0 1 17.92 64 128 128 0 0 1-72.32 138.88c-84.48 48-247.68 48-284.16 11.52C355.2 632.96 355.2 584.32 384 512H128a375.04 375.04 0 0 0-60.8 181.12c0 5.76 6.4 5.76 12.16 12.16 12.16-6.4 18.56-6.4 24.32 0z m332.16-288.64H137.6a30.08 30.08 0 0 1 0-60.16h302.08a30.08 30.08 0 0 1 0 60.16z m301.44-181.12A28.16 28.16 0 0 1 711.04 208v-94.08h-60.16v93.44a30.08 30.08 0 0 1-60.16 0v-30.08H469.76a28.16 28.16 0 0 1-30.08-26.88v-3.84a28.16 28.16 0 0 1 26.24-30.08h128V86.4a28.16 28.16 0 0 1 23.04-30.08h124.16a28.8 28.8 0 0 1 30.72 26.24v33.92H832a28.8 28.8 0 0 1 30.08 26.88 28.8 28.8 0 0 1-26.24 30.72h-64v30.08a28.8 28.8 0 0 1-30.08 26.88z"
+                                      fill="#2c2c2c"></path>
+                                <
+                            </svg>
+                        </div>
+                        <p class="card-text mt-4">This is a wider card with supporting text below as a natural lead-in
+                            to
+                            additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Rent</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Return</button>
+                            </div>
+                            <small class="text-muted">E-bikes</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4 ">
+            <p>Something wrong happened? give us a report!!!</p>
+        </div>
     </div>
-    <div class="container-xxl text-bg-dark p-5 rounded" id="How_to_pay">
-        <h1>黑色背景:How to Pay</h1>
-        <li>一些文字</li>
-        <li>或者一些图片</li>
-        <p>占位</p>
-        <p>占位</p>
-        <p>占位</p>
+    <div class="container-fluid text-bg-dark p-4" id="How_to_pay">
+        <h1 class="mt-2 mb-4 text-center">How to Pay</h1>
+        <li>手机应用支付下载并安装我们的共享单车手机应用，注册并登录您的账户。
+            在应用中绑定您的支付方式（如支付宝、微信支付、银行卡等）。
+        </li>
+        <li>支付方式2：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        </li>
+        <li>支付方式3：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        </li>
+        <h3>记得加一些图片</h3>
+        <p>占位符</p>
+        <p>占位符</p>
+        <p>占位符</p>
     </div>
     <script>
-    // 定义函数，用于滚动到 "黑色背景: How to Pay" 部分
-    function scrollToSection() {
-        document.getElementById('How_to_pay').scrollIntoView({ behavior: 'smooth' });
-    }
-</script>
+        // 定义函数，用于滚动到 "黑色背景: How to Pay" 部分
+        function scrollToSection() {
+            document.getElementById('How_to_pay').scrollIntoView({behavior: 'smooth'});
+        }
+    </script>
 {% endblock %}
